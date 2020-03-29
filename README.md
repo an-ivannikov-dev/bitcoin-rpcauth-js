@@ -23,30 +23,81 @@
 - [git].
 
 
-## Installation through `git clone`
+## Usage In your PC
+```bash
+bitcoin-rpcauth [username] [password] [salt]
 
+Create login credentials for a Bitcoin JSON-RPC user
+
+Positionals:
+  username, u  the username for authentication                          [string]
+  password, p  leave empty to gen a random password                     [string]
+  salt, s      the byte hex salt                                        [string]
+
+Options:
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
+```
+
+**Usage:**
+```bash
+bitcoin-rpcauth user_777
+# or
+bitcoin-rpcauth --username user_777
+# or
+bitcoin-rpcauth -u=user_777
+```
+
+**Returned:**
+```bash
+String to be appended to bitcoin.conf:
+rpcauth=user_777:a031c9a6bf82e4c5af455fe2f1aae67d$d801b2e75986c51c2d898e66d33e58ef3557adf509efcb227d5141eb1aa77fd9
+Your password:
+Sywps_2-pL4uLYf-DzWfJYxOQfFRJcmu0kUBhKOs-4c
+```
+
+### Installation in your PC through [yarn]
+```
+yarn global add bitcoin-rpcauth-js
+```
+
+### Installation in your PC through [yarn] from [GitHub]
+```
+yarn global add https://github.com/an-ivannikov-dev/bitcoin-rpcauth-js
+```
+
+#### Removing from your PC
+```bash
+yarn global remove bitcoin-rpcauth-js
+```
+
+
+### Installation in your PC through `git clone` from [GitHub]
 ```bash
 git clone https://github.com/an-ivannikov-dev/bitcoin-rpcauth-js.git
 cd bitcoin-rpcauth-js
 yarn install
-yarn start user password
 ```
 
-returned:
+**Usage:**
+```bash
+yarn start user_777
+# or
+yarn start --username user_777
+# or
+yarn start -u=user_777
+```
+
+**Returned:**
 ```bash
 String to be appended to bitcoin.conf:
-rpcauth=user:4328d56d7cc1493e0c0a119a4d20717d$011ca4f3619e0af0b68f5c30e04839af65186c9e0bfbdd0b6d876ae094545c00
+rpcauth=user_777:a031c9a6bf82e4c5af455fe2f1aae67d$d801b2e75986c51c2d898e66d33e58ef3557adf509efcb227d5141eb1aa77fd9
 Your password:
-password
+Sywps_2-pL4uLYf-DzWfJYxOQfFRJcmu0kUBhKOs-4c
 ```
 
 
-## Installation through [yarn]
-
-```bash
-yarn add https://github.com/an-ivannikov-dev/bitcoin-rpcauth-js.git
-```
-
+## Usage In your Project
 ```js
 const {
   genSalt, genPass, genUser, genHash, genRpcAuth, genRpcAuthStr,
@@ -75,8 +126,8 @@ const rpcAuthObj2 = genRpcAuth();
 console.log('rpcAuthObj2:', rpcAuthObj2);
 ```
 
-returned:
-```
+**Returned:**
+```bash
 username: user_157
 password: lrD7Cr_BTwgwT6XJo1-LFdHSri6AtUGHfPppRioSnFI
 salt: 105e26017130cece3a7fa3d78b91c468
@@ -96,7 +147,19 @@ rpcAuthObj2: {
 }
 ```
 
+### Installation in your Project through [yarn]
+```
+yarn add bitcoin-rpcauth-js
+```
+
+### Installation in your Project through [yarn] from [GitHub]
+```bash
+yarn add https://github.com/an-ivannikov-dev/bitcoin-rpcauth-js.git
+```
+
+
 [share/rpcauth]: https://github.com/bitcoin/bitcoin/tree/master/share/rpcauth "share/rpcauth"
+[GitHub]: https://github.com/ "GitHub"
 [nodejs]: https://nodejs.org/ "nodejs"
 [yarn]: https://yarnpkg.com/ "yarn"
 [git]: https://git-scm.com/ "git"

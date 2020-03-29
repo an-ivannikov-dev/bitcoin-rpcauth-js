@@ -10,29 +10,33 @@ const argv = require('yargs')
       yargs
         .positional('username', {
           describe: 'the username for authentication',
+          alias: 'u',
           type: 'string',
-          default: genUser(),
+          default: undefined,
         })
         .positional('password', {
           describe: 'leave empty to gen a random password', // or specify "-" to prompt for password
+          alias: 'p',
           type: 'string',
-          default: genPass(),
+          default: undefined,
         })
         .positional('salt', {
           describe: 'the byte hex salt',
+          alias: 's',
           type: 'string',
-          default: genSalt(16),
+          default: undefined,
         });
     }
   )
   .help('h')
   .alias('h', 'help')
-  .showHelpOnFail(true)
+  .alias('v', 'version')
+  .locale('en')
   .argv;
 
-const username = argv.username;
-const password = argv.password;
-const salt = argv.salt;
+const username = argv.username || genUser();
+const password = argv.password || genPass();
+const salt = argv.salt || genSalt();
 const rpcAuthStr = genRpcAuthStr(username, password, salt);
 
 console.log(`
