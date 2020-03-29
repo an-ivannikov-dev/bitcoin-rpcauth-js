@@ -31,6 +31,7 @@
   },
   "keywords": [
     "bitcoin",
+    "bitcoin-rpc",
     "rpc",
     "auth",
     "rpcauth",
