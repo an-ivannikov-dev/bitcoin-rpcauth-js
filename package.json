@@ -1,0 +1,46 @@
+{
+  "name": "bitcoin-rpcauth-js",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Create login credentials for a JSON-RPC user",
+  "author": {
+    "name": "Aleksandr Ivannikov",
+    "email": "dev@an-ivannikov.com",
+    "url": "https://an-ivannikov.com"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "bitcoin-rpcauth": "./bin/bitcoin-rpcauth.js"
+  },
+  "scripts": {
+    "start": "node ./bin/bitcoin-rpcauth.js"
+  },
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "yargs": "^15.3.1"
+  },
+  "homepage": "https://github.com/an-ivannikov-dev/bitcoin-rpcauth-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/an-ivannikov-dev/bitcoin-rpcauth-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/an-ivannikov-dev/bitcoin-rpcauth-js/issues",
+    "email": "dev@an-ivannikov.com"
+  },
+  "keywords": [
+    "bitcoin",
+    "rpc",
+    "auth",
+    "rpcauth",
+    "generator"
+  ],
+  "contributors": [
+    {
+      "name": "Aleksandr Ivannikov",
+      "email": "dev@an-ivannikov.com",
+      "url": "https://an-ivannikov.com"
+    }
+  ]
+}
